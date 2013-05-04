@@ -9,6 +9,7 @@ if ($Module::Install::AUTHOR) {
 name 'MooseX-Types-Email';
 all_from 'lib/MooseX/Types/Email.pm';
 
+requires 'MooseX::Types::Moose';
 requires 'MooseX::Types::Common';
 requires 'Email::Valid';
 requires 'Email::Abstract';
