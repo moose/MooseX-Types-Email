@@ -18,7 +18,7 @@ test_requires 'Test::More';
 
 author_tests 't/author';
 
-resources repository => 'http://github.com/bobtfish/moosex-types-email/tree/master';
+auto_set_repository;
 
 WriteAll();
 
