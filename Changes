@@ -1,4 +1,5 @@
 
+0.005  2013-05-05
   - Add EmailAddresses and EmailMessages types (ether)
   - use Str as a base, not NonEmptySimpleStr (RT#63578)
 
