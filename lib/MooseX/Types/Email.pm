@@ -6,7 +6,7 @@ use MooseX::Types::Moose qw/Object ArrayRef Str/;
 use Email::Valid;
 use Email::Abstract;
 
-our $VERSION = '0.004';
+our $VERSION = '0.005';
 
 subtype EmailAddress,
   as Str,
