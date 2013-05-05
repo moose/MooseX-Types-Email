@@ -1,8 +1,8 @@
 package MooseX::Types::Email;
 use MooseX::Types
-    -declare => [qw/EmailAddress EmailMessage/];
+    -declare => [qw/EmailAddress EmailMessage EmailAddresses EmailMessages/];
 
-use MooseX::Types::Moose qw/Object/;
+use MooseX::Types::Moose qw/Object ArrayRef/;
 use MooseX::Types::Common::String 'NonEmptySimpleStr';
 use Email::Valid;
 use Email::Abstract;
@@ -21,26 +21,49 @@ subtype EmailMessage,
 coerce EmailMessage,
   from Object,
   via { Email::Abstract->new($_) };
+
+
+subtype EmailAddresses,
+  as ArrayRef[EmailAddress],
+  message { 'Must be an arrayref of valid e-mail addresses' };
+
+coerce EmailAddresses,
+  from NonEmptySimpleStr,
+  via { [ $_ ] };
+
+subtype EmailMessages,
+  as ArrayRef[Object],
+  where { not grep { not Email::Abstract->new($_) } @$_  },
+  message { 'Must be an arrayref of something Email::Abstract recognizes' };
+
+# no coercion from Object, as that would also catch existing Email::Abstract
+# objects and its subtypes.
+
 1;
 
 =head1 NAME
 
-MooseX::Types::Email - Email address validation type constraint for Moose.
+MooseX::Types::Email - Email address validation type constraints for Moose.
 
 =head1 SYNOPSIS
 
     package MyClass;
     use Moose;
-    use MooseX::Types::Email qw/EmailAddress EmailMessage/;
+    use MooseX::Types::Email qw/EmailAddress EmailMessage EmailAddresses EmailMessages/;
     use namespace::autoclean;
 
     has email => ( isa => EmailAddress, required => 1, is => 'ro' );
     has message => ( isa => EmailMessage, required => 1, is => 'ro' );
 
+    has emails => ( isa => EmailAddresses, required => 1, is => 'ro' );
+    has messages => ( isa => EmailMessages, required => 1, is => 'ro' );
+
+
 =head1 DESCRIPTION
 
 Moose type constraints which uses L<Email::Valid> and L<Email::Abstract> to check
-for valid email addresses and messages.
+for valid email addresses and messages.  Types that support both single items
+and an arrayref of items are available.
 
 Note that C<EmailMessage> must be an object that can be passed to
 L<Email::Abstract>. Currently, constraining strings is not supported due to the
@@ -70,6 +93,9 @@ Shamelessly extracted from L<Reaction::Types::Email>.
 
 Chris Nehren C<< <apeiron@cpan.org> >> added support for validing email
 messages.
+
+Karen Etheridge C<< <ether@cpan.org> >> added support for lists of email
+addresses and messages.
 
 =head1 COPYRIGHT
 

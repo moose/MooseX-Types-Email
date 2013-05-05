@@ -15,6 +15,7 @@ requires 'Email::Valid';
 requires 'Email::Abstract';
 
 test_requires 'Test::More';
+test_requires 'Test::Deep';
 
 author_tests 't/author';
 
