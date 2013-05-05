@@ -1,5 +1,6 @@
 
   - Add EmailAddresses and EmailMessages types (ether)
+  - use Str as a base, not NonEmptySimpleStr (RT#63578)
 
 0.004  29-04-2011
   - Fix documentation links (abraxxa)

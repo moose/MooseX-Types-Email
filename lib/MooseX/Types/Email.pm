@@ -2,15 +2,14 @@ package MooseX::Types::Email;
 use MooseX::Types
     -declare => [qw/EmailAddress EmailMessage EmailAddresses EmailMessages/];
 
-use MooseX::Types::Moose qw/Object ArrayRef/;
-use MooseX::Types::Common::String 'NonEmptySimpleStr';
+use MooseX::Types::Moose qw/Object ArrayRef Str/;
 use Email::Valid;
 use Email::Abstract;
 
 our $VERSION = '0.004';
 
 subtype EmailAddress,
-  as NonEmptySimpleStr,
+  as Str,
   where { Email::Valid->address($_) },
   message { "Must be a valid e-mail address" };
 
@@ -28,7 +27,7 @@ subtype EmailAddresses,
   message { 'Must be an arrayref of valid e-mail addresses' };
 
 coerce EmailAddresses,
-  from NonEmptySimpleStr,
+  from Str,
   via { [ $_ ] };
 
 subtype EmailMessages,
