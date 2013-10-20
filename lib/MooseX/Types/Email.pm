@@ -1,12 +1,12 @@
 package MooseX::Types::Email;
+# ABSTRACT: Email address validation type constraints for Moose.
+
 use MooseX::Types
     -declare => [qw/EmailAddress EmailMessage EmailAddresses EmailMessages/];
 
 use MooseX::Types::Moose qw/Object ArrayRef Str/;
 use Email::Valid;
 use Email::Abstract;
-
-our $VERSION = '0.005';
 
 subtype EmailAddress,
   as Str,
@@ -40,9 +40,7 @@ subtype EmailMessages,
 
 1;
 
-=head1 NAME
-
-MooseX::Types::Email - Email address validation type constraints for Moose.
+=pod
 
 =head1 SYNOPSIS
 
@@ -82,28 +80,17 @@ leniency of Email::Abstract.
 
 =back
 
-=head1 AUTHORS
-
-Tomas Doran (t0m) C<< <bobtfish@bobtfish.net> >>
+=head1 ORIGIN
 
 Shamelessly extracted from L<Reaction::Types::Email>.
 
-=head1 CONTRIBUTORS
+=head1 ACKNOWLEDGEMENTS
 
 Chris Nehren C<< <apeiron@cpan.org> >> added support for validing email
 messages.
 
 Karen Etheridge C<< <ether@cpan.org> >> added support for lists of email
 addresses and messages.
-
-=head1 COPYRIGHT
-
-Copyright 2009 the above L<AUTHORS> and L<CONTRIBUTORS>.
-
-=head1 LICENSE
-
-This library is free software, you can redistribute it and/or modify it under the same
-terms as Perl itself.
 
 =cut
 
