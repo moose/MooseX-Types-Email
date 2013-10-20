@@ -10,12 +10,12 @@ name 'MooseX-Types-Email';
 all_from 'lib/MooseX/Types/Email.pm';
 
 requires 'MooseX::Types::Moose';
-requires 'MooseX::Types::Common';
 requires 'Email::Valid';
 requires 'Email::Abstract';
 
 test_requires 'Test::More';
 test_requires 'Test::Deep';
+test_requires 'Test::Fatal';
 
 author_tests 't/author';
 
