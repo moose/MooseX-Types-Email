@@ -2,6 +2,7 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
   - converted to Dist::Zilla
+  - repository migrated to the github moose organization
 
 0.005  2013-05-05
   - Add EmailAddresses and EmailMessages types (ether)
