@@ -42,7 +42,7 @@ Shamelessly extracted from [Reaction::Types::Email](http://search.cpan.org/perld
 
 # ACKNOWLEDGEMENTS
 
-Chris Nehren `<apeiron@cpan.org>` added support for validing email
+Chris Nehren `<apeiron@cpan.org>` added support for validating email
 messages.
 
 Karen Etheridge `<ether@cpan.org>` added support for lists of email

@@ -59,7 +59,7 @@ Once installed, here are some dzil commands you might try:
 You can learn more about Dist::Zilla at http://dzil.org/.
 
 The code for this distribution is hosted at GitHub. The main repository is:
-https://github.com/karenetheridge/moosex-types-email.
+https://github.com/moose/MooseX-Types-Email.
 You can submit code changes by forking the repository, pushing your code
 changes to your clone, and then submitting a pull request. Detailed
 instructions for doing that is available here:
