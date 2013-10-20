@@ -86,7 +86,7 @@ Shamelessly extracted from L<Reaction::Types::Email>.
 
 =head1 ACKNOWLEDGEMENTS
 
-Chris Nehren C<< <apeiron@cpan.org> >> added support for validing email
+Chris Nehren C<< <apeiron@cpan.org> >> added support for validating email
 messages.
 
 Karen Etheridge C<< <ether@cpan.org> >> added support for lists of email
