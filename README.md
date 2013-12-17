@@ -21,24 +21,24 @@ version 0.006
 
 # DESCRIPTION
 
-Moose type constraints which uses [Email::Valid](http://search.cpan.org/perldoc?Email::Valid) and [Email::Abstract](http://search.cpan.org/perldoc?Email::Abstract) to check
+Moose type constraints which uses [Email::Valid](https://metacpan.org/pod/Email::Valid) and [Email::Abstract](https://metacpan.org/pod/Email::Abstract) to check
 for valid email addresses and messages.  Types that support both single items
 and an arrayref of items are available.
 
 Note that `EmailMessage` must be an object that can be passed to
-[Email::Abstract](http://search.cpan.org/perldoc?Email::Abstract). Currently, constraining strings is not supported due to the
+[Email::Abstract](https://metacpan.org/pod/Email::Abstract). Currently, constraining strings is not supported due to the
 leniency of Email::Abstract.
 
 # SEE ALSO
 
-- [Moose::Util::TypeConstraints](http://search.cpan.org/perldoc?Moose::Util::TypeConstraints)
-- [MooseX::Types](http://search.cpan.org/perldoc?MooseX::Types)
-- [Email::Valid](http://search.cpan.org/perldoc?Email::Valid)
-- [Email::Abstract](http://search.cpan.org/perldoc?Email::Abstract)
+- [Moose::Util::TypeConstraints](https://metacpan.org/pod/Moose::Util::TypeConstraints)
+- [MooseX::Types](https://metacpan.org/pod/MooseX::Types)
+- [Email::Valid](https://metacpan.org/pod/Email::Valid)
+- [Email::Abstract](https://metacpan.org/pod/Email::Abstract)
 
 # ORIGIN
 
-Shamelessly extracted from [Reaction::Types::Email](http://search.cpan.org/perldoc?Reaction::Types::Email).
+Shamelessly extracted from [Reaction::Types::Email](https://metacpan.org/pod/Reaction::Types::Email).
 
 # ACKNOWLEDGEMENTS
 
