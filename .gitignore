@@ -1,3 +1,6 @@
+/.ackrc
 /.build/
-!.gitignore
-/MooseX-Types-Email-*
+!/.gitignore
+/.latest
+/MooseX-Types-Email-*/
+/MooseX-Types-Email-*.tar.gz
