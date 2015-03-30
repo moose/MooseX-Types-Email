@@ -2,7 +2,7 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
-0.006     2013-10-20 05:14:24Z (Karen Etheridge)
+0.006     2013-10-20 05:14:24Z
   - converted to Dist::Zilla
   - repository migrated to the github moose organization
 
