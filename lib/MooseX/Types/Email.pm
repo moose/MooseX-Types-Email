@@ -9,6 +9,7 @@ use MooseX::Types
 use MooseX::Types::Moose qw/Object ArrayRef Str/;
 use Email::Valid;
 use Email::Abstract;
+use if MooseX::Types->VERSION >= 0.42, 'namespace::autoclean';
 
 subtype EmailAddress,
   as Str,
