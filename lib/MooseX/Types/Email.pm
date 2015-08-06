@@ -1,6 +1,8 @@
 package MooseX::Types::Email;
 # ABSTRACT: Email address validation type constraints for Moose.
 
+our $VERSION = '0.007';
+
 use MooseX::Types
     -declare => [qw/EmailAddress EmailMessage EmailAddresses EmailMessages/];
 
