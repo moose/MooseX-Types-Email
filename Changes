@@ -1,6 +1,7 @@
 Revision history for MooseX-Types-Email
 
 {{$NEXT}}
+  - update some distribution tooling
 
 0.006     2013-10-20 05:14:24Z
   - converted to Dist::Zilla
