@@ -15,11 +15,25 @@ use if MooseX::Types->VERSION >= 0.42, 'namespace::autoclean';
 subtype EmailAddress,
   as Str,
   where { Email::Valid->address($_) },
-  message { "Must be a valid e-mail address" };
+  message { "Must be a valid e-mail address" },
+  ( $Moose::VERSION >= 2.0200
+      ? inline_as {
+          $_[0]->parent()->_inline_check( $_[1] ) . ' && '
+              . qq{ Email::Valid->address($_[1]) };
+      }
+      : ()
+  );
 
 subtype EmailMessage,
   as Object, where { Email::Abstract->new($_) },
-  message { "Must be something Email::Abstract recognizes" };
+  message { "Must be something Email::Abstract recognizes" },
+  ( $Moose::VERSION >= 2.0200
+      ? inline_as {
+          $_[0]->parent()->_inline_check( $_[1] ) . ' && '
+              . qq{ Email::Abstract->new($_[1]) };
+      }
+      : ()
+  );
 
 coerce EmailMessage,
   from Object,
@@ -37,7 +51,14 @@ coerce EmailAddresses,
 subtype EmailMessages,
   as ArrayRef[Object],
   where { not grep { not Email::Abstract->new($_) } @$_  },
-  message { 'Must be an arrayref of something Email::Abstract recognizes' };
+  message { 'Must be an arrayref of something Email::Abstract recognizes' },
+  ( $Moose::VERSION >= 2.0200
+      ? inline_as {
+          $_[0]->parent()->_inline_check( $_[1] ) . ' && '
+              . qq{ not grep { not Email::Abstract->new(\$_) } \@{ $_[1] } };
+      }
+      : ()
+  );
 
 # no coercion from Object, as that would also catch existing Email::Abstract
 # objects and its subtypes.
@@ -97,4 +118,3 @@ Karen Etheridge C<< <ether@cpan.org> >> added support for lists of email
 addresses and messages.
 
 =cut
-
