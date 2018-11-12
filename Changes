@@ -1,5 +1,7 @@
 Revision history for MooseX-Types-Email
 
+{{$NEXT}}
+
 0.008     2018-11-12 00:39:13Z
 
   - inline all types
