@@ -8,7 +8,7 @@ MooseX::Types::Email - Email address validation type constraints for Moose.
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -59,13 +59,24 @@ messages.
 Karen Etheridge C<< <ether@cpan.org> >> added support for lists of email
 addresses and messages.
 
+=head1 SUPPORT
+
+Bugs may be submitted through L<the RT bug tracker|https://rt.cpan.org/Public/Dist/Display.html?Name=MooseX-Types-Email>
+(or L<bug-MooseX-Types-Email@rt.cpan.org|mailto:bug-MooseX-Types-Email@rt.cpan.org>).
+
+There is also a mailing list available for users of this distribution, at
+L<http://lists.perl.org/list/moose.html>.
+
+There is also an irc channel available for users of this distribution, at
+L<C<#moose> on C<irc.perl.org>|irc://irc.perl.org/#moose>.
+
 =head1 AUTHOR
 
 Tomas Doran (t0m) <bobtfish@bobtfish.net
 
 =head1 CONTRIBUTORS
 
-=for stopwords Karen Etheridge Tomas Doran (t0m) Alexander Hartmaier Chris Nehren
+=for stopwords Karen Etheridge Tomas Doran (t0m) Alexander Hartmaier Chris Nehren Gregory Oschwald
 
 =over 4
 
@@ -84,6 +95,10 @@ Alexander Hartmaier <abraxxa@cpan.org>
 =item *
 
 Chris Nehren <apeiron@cpan.org>
+
+=item *
+
+Gregory Oschwald <goschwald@maxmind.com>
 
 =back
 
