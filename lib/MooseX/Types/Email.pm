@@ -2,7 +2,7 @@ package MooseX::Types::Email;
 # ABSTRACT: Email address validation type constraints for Moose.
 # KEYWORDS: moose type constraint email address message abstract
 
-our $VERSION = '0.009';
+our $VERSION = '0.010';
 
 use MooseX::Types
     -declare => [qw/EmailAddress EmailMessage EmailAddresses EmailMessages/];
