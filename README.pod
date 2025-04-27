@@ -8,7 +8,7 @@ MooseX::Types::Email - Email address validation type constraints for Moose.
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
